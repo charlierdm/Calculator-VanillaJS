@@ -1,1 +1,3 @@
-# js-project
+# Calculator-VanillaJS
+
+
