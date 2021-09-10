@@ -29,7 +29,11 @@ body {
 }
 
 #op {
-  background-color: rgba(236, 218, 173, 0.842);
+  background-color: rgba(243, 227, 186, 0.945);
+}
+
+#op:hover {
+  background-color: rgba(233, 188, 92, 0.7);
 }
 
 .calculator > button:hover {
@@ -49,4 +53,13 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   flex-direction: column;
+}
+
+.prev-operation {
+  font-size: 2rem;
+  opacity: 70%;
+}
+
+.current-operation {
+  font-size: 4rem;
 }
