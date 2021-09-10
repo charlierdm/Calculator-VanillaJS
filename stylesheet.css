@@ -1,3 +1,19 @@
 * {
-  background-color: rgb(211, 207, 207);
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 500
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to left, rgb(223, 224, 223), rgb(132, 179, 163) );
+}
+
+.calculator {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 150px)
 }
