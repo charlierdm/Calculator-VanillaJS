@@ -13,10 +13,10 @@ body {
 .calculator {
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   min-height: 100vh;
-  grid-template-columns: repeat(4, 150px);
-  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: minmax(7.5rem, auto) repeat(5, 7rem);
 }
 
 .calculator > button {
@@ -25,5 +25,9 @@ body {
   border: 1px solid rgb(255, 255, 255);
   padding: 0.2rem;
   outline: none;
-  background-color: rgb(214, 201, 166);
+  background-color: rgb(214, 201, 166, .70);
+}
+
+.calculator > button:hover {
+  background-color: rgba(252, 252, 252, 0.7);
 }
