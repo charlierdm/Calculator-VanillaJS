@@ -22,14 +22,14 @@ body {
 .calculator > button {
   cursor: pointer;
   font-size: 2.2rem;
-  border: 7px solid rgb(233, 233, 233);
+  border: 7px solid rgb(207, 207, 207);
   padding: 0.3rem;
   outline: none;
   background-color: rgba(243, 227, 186, 0.945);
 }
 
 #op {
-  background-color: rgba(196, 191, 179, 0.7);
+  background-color: rgba(179, 170, 152, 0.7);
 }
 
 #op:hover {
@@ -46,14 +46,14 @@ body {
 
 .screen {
   grid-column: 1 / -1;
-  border: 7px solid rgb(233, 233, 233);
-  background-color: rgb(206, 206, 206);
+  border: 7px solid rgb(207, 207, 207);
+  background-color: rgb(138, 136, 136);
   color: rgb(43, 43, 43, 0.75);
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   flex-direction: column;
-  padding: 0.3rem;
+  padding: 0.6rem;
   word-wrap: break-word;
   word-break: break-all;
 }

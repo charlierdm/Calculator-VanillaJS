@@ -12,20 +12,17 @@ class Calculator {
   }
 
   delete() {
-
+    this.currentOperand = this.currentOperand.slice(0, -1);
   }
 
   appendNumber(number) {
-    this.currentOperand = number;
+    if(number === '.' && this.currentOperand.includes('.')) return
+    this.currentOperand = this.currentOperand + number;
   }
 
-  chooseOperation(operation) {
+  chooseOperation(operation) {}
 
-  }
-
-  evaluate() {
-    
-  }
+  evaluate() {}
 
   updateScreen() {
     this.currentOperandText.innerText = this.currentOperand;
@@ -51,5 +48,10 @@ numberButtons.forEach((button) => {
 
 allClearButton.addEventListener("click", () => {
   calculator.clear();
+  calculator.updateScreen();
+});
+
+deleteButton.addEventListener("click", () => {
+  calculator.delete();
   calculator.updateScreen();
 });
