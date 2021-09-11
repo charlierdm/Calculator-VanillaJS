@@ -46,6 +46,7 @@ body {
 
 .screen {
   grid-column: 1 / -1;
+  height: 10rem;
   border: 7px solid rgb(207, 207, 207);
   background-color: rgb(138, 136, 136);
   color: rgb(43, 43, 43, 0.75);
@@ -53,14 +54,13 @@ body {
   align-items: flex-end;
   justify-content: space-around;
   flex-direction: column;
-  padding: 0.6rem;
+  padding: 0.7rem;
   word-wrap: break-word;
   word-break: break-all;
 }
 
 .prev-operation {
   font-size: 2rem;
-  opacity: 70%;
 }
 
 .current-operation {

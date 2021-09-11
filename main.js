@@ -16,21 +16,54 @@ class Calculator {
   }
 
   appendNumber(number) {
-    if(number === '.' && this.currentOperand.includes('.')) return
+    if (number === "." && this.currentOperand.includes(".")) return;
     this.currentOperand = this.currentOperand + number;
   }
 
-  chooseOperation(operation) {}
+  chooseOperation(operation) {
+    if (this.currentOperand === "") return;
+    if (this.prevOperand !== "") {
+      this.evaluate();
+    }
+    this.operation = operation;
+    this.prevOperand = this.currentOperand;
+    this.currentOperand = "";
+  }
 
-  evaluate() {}
+  evaluate() {
+    let evaluated;
+    const prev = +this.prevOperand;
+    const current = +this.currentOperand;
+    if (isNaN(prev) || isNaN(current)) return;
+    switch (this.operation) {
+      case "+":
+        evaluated = prev + current;
+        break;
+      case "-":
+        evaluated = prev - current;
+        break;
+      case "*":
+        evaluated = prev * current;
+        break;
+      case "÷":
+        evaluated = prev / current;
+        break;
+      default:
+        return;
+    }
+    this.currentOperand = evaluated;
+    this.operation = undefined;
+    this.prevOperand = "";
+  }
 
   updateScreen() {
     this.currentOperandText.innerText = this.currentOperand;
+    this.prevOperandText.innerText = this.prevOperand;
   }
 }
 
 const numberButtons = document.querySelectorAll("[data-number]");
-const operationButton = document.querySelectorAll("[data-operation]");
+const operationButtons = document.querySelectorAll("[data-operation]");
 const equalsButton = document.querySelector("[data-equals]");
 const allClearButton = document.querySelector("[data-all-clear]");
 const deleteButton = document.querySelector("[data-delete]");
@@ -53,5 +86,17 @@ allClearButton.addEventListener("click", () => {
 
 deleteButton.addEventListener("click", () => {
   calculator.delete();
+  calculator.updateScreen();
+});
+
+operationButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculator.chooseOperation(button.innerText);
+    calculator.updateScreen();
+  });
+});
+
+equalsButton.addEventListener("click", () => {
+  calculator.evaluate();
   calculator.updateScreen();
 });
