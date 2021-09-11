@@ -56,10 +56,27 @@ class Calculator {
     this.prevOperand = "";
   }
 
+  getDisplayNumber(number) {
+    const stringNum = number.toString();
+    const integerDigits = +stringNum.split(".")[0];
+    const decimalDigits = stringNum.split(".")[1];
+    let integerDisplay;
+    if (isNaN(integerDigits)) {
+      integerDisplay = "";
+    } else {
+      integerDisplay = integerDigits.toLocaleString("en", {
+        maximumFractionDigits: 0,
+      });
+    }
+    if (decimalDigits) return `${integerDisplay}.${decimalDigits}`;
+  }
+
   updateScreen() {
     this.currentOperandText.innerText = this.currentOperand;
     if (this.operation) {
-      this.prevOperandText.innerText = `${this.prevOperand} ${this.operation}`
+      this.prevOperandText.innerText = `${this.prevOperand} ${this.operation}`;
+    } else {
+      this.prevOperandText.innerText = "";
     }
   }
 }
