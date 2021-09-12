@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 * {
   box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: 500;
+  font-family: "Orbitron";
+  font-weight: 800;
 }
 
 body {
@@ -21,7 +23,7 @@ body {
 
 .calculator > button {
   cursor: pointer;
-  font-size: 2.2rem;
+  font-size: 2rem;
   border: 7px solid rgb(207, 207, 207);
   padding: 0.3rem;
   outline: none;
@@ -47,6 +49,7 @@ body {
 .screen {
   grid-column: 1 / -1;
   height: 10rem;
+  min-height: fit-content;
   border: 7px solid rgb(207, 207, 207);
   background-color: rgb(138, 136, 136);
   color: rgb(43, 43, 43, 0.75);
@@ -57,12 +60,14 @@ body {
   padding: 0.7rem;
   word-wrap: break-word;
   word-break: break-all;
+  overflow: auto;
+
 }
 
 .prev-operation {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .current-operation {
-  font-size: 4rem;
+  font-size: 3rem;
 }
