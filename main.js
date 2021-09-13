@@ -68,13 +68,20 @@ class Calculator {
         maximumFractionDigits: 0,
       });
     }
-    if (decimalDigits) return `${integerDisplay}.${decimalDigits}`;
+    if (decimalDigits != null) {
+      return `${integerDisplay}.${decimalDigits}`;
+    } else {
+      return integerDisplay;
+    }
   }
 
   updateScreen() {
-    this.currentOperandText.innerText = this.currentOperand;
+    this.currentOperandText.innerText = this.getDisplayNumber(
+      this.currentOperand
+    );
     if (this.operation) {
-      this.prevOperandText.innerText = `${this.prevOperand} ${this.operation}`;
+      this.prevOperandText.innerText = 
+      `${this.getDisplayNumber(this.prevOperand)} ${this.operation}`;
     } else {
       this.prevOperandText.innerText = "";
     }
