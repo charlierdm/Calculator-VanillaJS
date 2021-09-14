@@ -80,8 +80,9 @@ class Calculator {
       this.currentOperand
     );
     if (this.operation) {
-      this.prevOperandText.innerText = 
-      `${this.getDisplayNumber(this.prevOperand)} ${this.operation}`;
+      this.prevOperandText.innerText = `${this.getDisplayNumber(
+        this.prevOperand
+      )} ${this.operation}`;
     } else {
       this.prevOperandText.innerText = "";
     }
@@ -125,4 +126,34 @@ operationButtons.forEach((button) => {
 equalsButton.addEventListener("click", () => {
   calculator.evaluate();
   calculator.updateScreen();
+});
+
+document.addEventListener("keydown", (e) => {
+  numberButtons.forEach((button) => {
+    if (e.key == button.innerText) {
+      button.click();
+    }
+  });
+
+  operationButtons.forEach((button) => {
+    if (e.key == button.innerText) {
+      calculator.chooseOperation(button.innerText);
+      calculator.updateScreen();
+    }
+  });
+
+  if (e.key == "Backspace") {
+    calculator.delete();
+    calculator.updateScreen();
+  }
+
+  if (e.key == "Escape") {
+    calculator.clear();
+    calculator.updateScreen();
+  }
+
+  if (e.key == "Enter") {
+    calculator.evaluate();
+    calculator.updateScreen();
+  }
 });
