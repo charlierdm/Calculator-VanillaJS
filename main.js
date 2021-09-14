@@ -140,6 +140,10 @@ document.addEventListener("keydown", (e) => {
       calculator.chooseOperation(button.innerText);
       calculator.updateScreen();
     }
+
+    if(e.key == '/') {
+      button.click()
+    }
   });
 
   if (e.key == "Backspace") {
@@ -152,8 +156,7 @@ document.addEventListener("keydown", (e) => {
     calculator.updateScreen();
   }
 
-  if (e.key == "Enter") {
-    calculator.evaluate();
-    calculator.updateScreen();
+  if (e.key == 'Enter') {
+    equalsButton.click()
   }
 });

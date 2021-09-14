@@ -2,7 +2,8 @@
 
 For this project I have created a fully functioning calculator using Vanilla JavaScript, CSS and HTML.
 
-![calculatorJSGIF](https://user-images.githubusercontent.com/75075773/132985211-8ce30923-da53-4a4c-95d3-10677f585c76.gif)
+![calculatorJSGIF2](https://user-images.githubusercontent.com/75075773/133335930-26b7c9c6-af36-42b5-a172-80bdf80bb5cf.gif)
+
 
 
 #### Learning objectives
